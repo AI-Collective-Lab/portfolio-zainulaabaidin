@@ -4,6 +4,8 @@
 
 <p align="center"><a href="https://ai-collective-lab.github.io/portfolio-zainulaabaidin/"><img src="https://img.shields.io/badge/Portfolio-view_page-1f6fe0?style=for-the-badge" alt="View portfolio page"></a> <a href="https://github.com/zainulaabaidin"><img src="https://img.shields.io/badge/GitHub-@zainulaabaidin-0a1430?style=for-the-badge&logo=github" alt="GitHub profile"></a> <a href="https://ai-collective-lab.github.io/"><img src="https://img.shields.io/badge/AI_Collective-main_site-6d43d4?style=for-the-badge" alt="AI Collective"></a></p>
 
+**Connect:** [GitHub](https://github.com/zainulaabaidin)
+
 ## 🧠 Projects
 
 | Project | Role | What it is | Links |

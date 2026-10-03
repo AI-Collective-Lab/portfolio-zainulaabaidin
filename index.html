@@ -43,6 +43,13 @@ a{color:inherit}
 h1{font:800 clamp(34px,6vw,60px)/1 var(--display);font-stretch:118%;letter-spacing:-.03em;margin:0 0 12px;overflow-wrap:anywhere}
 .role{font:500 15px/1.5 var(--mono);color:var(--muted);margin:0 0 14px}
 .about{max-width:38em;margin:0 0 18px}
+.connect{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 14px}
+.connect .lbl{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.connect a{display:inline-flex;align-items:center;gap:8px;font:500 13px/1.35 var(--mono);padding:8px 13px;border-radius:18px;border:1px solid var(--line);background:var(--surface);text-decoration:none;overflow-wrap:anywhere}
+.connect a:hover{border-color:var(--blue)}
+.connect svg{width:16px;height:16px;flex:none}
+.stats{font:400 13px/1.5 var(--mono);color:var(--muted);margin:0}
+.stats a{color:var(--ink)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
 .chips a,.chips span{display:inline-flex;align-items:center;gap:6px;font:500 13px/1.35 var(--mono);padding:8px 12px;border-radius:18px;border:1px solid var(--line);background:var(--surface);text-decoration:none}
 .chips a:hover{border-color:var(--blue)}
@@ -102,7 +109,8 @@ footer a{color:var(--ink)}
       <div class="who">
         <h1>Zain Ul Aabaidin</h1>
         <p class="about">Works on the collective&#x27;s computer-vision and classification projects.</p>
-        <div class="chips"><a href="https://github.com/zainulaabaidin">GitHub · @zainulaabaidin ↗</a><a href="https://ai-collective-lab.github.io/">AI Collective ↗</a><span>2 projects</span></div>
+        <nav class="connect" aria-label="Connect"><span class="lbl">Connect</span><a href="https://github.com/zainulaabaidin" target=_blank rel=noopener><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.58v-2.03c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.94 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3"/></svg>GitHub</a></nav>
+        <p class="stats">2 projects · part of <a href="https://ai-collective-lab.github.io/">AI Collective</a></p>
       </div>
     </div>
   </div>
