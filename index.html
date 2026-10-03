@@ -79,7 +79,7 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
 .card p{margin:0 0 16px}
 .authors{font:400 13px/1.6 var(--mono);color:var(--muted)}
 .authors b{color:var(--ink);font-weight:600} .authors a{text-decoration:none}
-.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0 0 18px;max-width:620px}
+.metrics{display:grid;grid-template-columns:repeat(var(--cols,3),minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0 0 18px;max-width:620px}
 .metrics div{background:var(--surface);padding:12px 14px;min-width:0}
 .metrics dt{font:400 11.5px/1.3 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
 .metrics dd{margin:4px 0 0;font:700 21px/1.1 var(--display);font-variant-numeric:tabular-nums}
@@ -93,12 +93,12 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
 .team{display:flex;align-items:center;gap:10px 14px;margin-top:20px;padding-top:16px;border-top:1px dashed var(--line);font:400 13px/1.3 var(--mono);color:var(--muted);flex-wrap:wrap}
 .team a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--ink);min-width:0;overflow-wrap:anywhere}
 .team img{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);flex:none}
-.team .sup{margin-left:auto} .team .sup b{color:var(--ink);font-weight:500}
+.team .sup{margin-left:auto} .team .sup.solo{margin-left:0} .team .sup b{color:var(--ink);font-weight:500}
 @media (max-width:560px){.team .sup{margin-left:0;flex-basis:100%}}
 .status{display:inline-flex;align-items:center;gap:6px;font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
 .status i{width:7px;height:7px;border-radius:50%;background:var(--blue)} .status.wip i{background:#e0a526} .status.done i{background:#1fae6b} .status.ready i{background:var(--violet)}
 .grid3{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:16px}
-.grid3 .card{display:flex;flex-direction:column} .grid3 .tags{margin-top:auto}
+.grid3 .card{display:flex;flex-direction:column} .grid3 .metrics dd small{display:block;margin:3px 0 0} .grid3 .tags{margin-top:auto}
 .org-logo{display:inline-flex;background:#fff;padding:10px 16px;border-radius:12px;border:1px solid var(--line);margin:0 0 18px}
 .org-logo img{height:40px;width:auto}
 @media print{
@@ -106,7 +106,7 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
  @page{margin:14mm}
  body{font-size:13px;background:#fff}
  #nn,.connect a.cv,.frame,.team{display:none}
- .card.split,.cards,.grid3{display:block} .eyebrow,h2,.intro,.org-logo{break-after:avoid;page-break-after:avoid} #research,#industry{break-before:page} .card{margin:0 0 12px} .card.clickable:hover{transform:none}
+ .card.split,.cards,.grid3{display:block} .eyebrow,h2,.intro,.org-logo{break-after:avoid;page-break-after:avoid} .card{margin:0 0 12px} .card.clickable:hover{transform:none}
  section{background:none;padding:22px 0;border-top:1px solid var(--line)}
  .hero{padding:0 0 18px}
  .card{break-inside:avoid;padding:16px;border-radius:10px}
@@ -131,6 +131,7 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
     </div>
   </div>
 
+
   <section id="projects">
     <div class="wrap">
       <p class="eyebrow">Projects</p>
@@ -139,11 +140,11 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
         <a class="src-btn" href="https://github.com/AI-Collective-Lab/Effectiveness-Of-Balancing-Dataset-On-Classification" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.58v-2.03c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.94 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3"/></svg>Source</a>
         <div>
           <span class="mine">Co-author</span>
-          <p class="kicker">Computer vision · PyTorch</p>
+          <p class="kicker">Computer vision · PyTorch · Jan 2026</p>
           <h3><a class="title" href="https://github.com/AI-Collective-Lab/Effectiveness-Of-Balancing-Dataset-On-Classification" target="_blank" rel="noopener">GAN-balanced plant disease classification <span aria-hidden="true">↗</span></a></h3>
           <p class="sub">Does generating minority-class images fix an imbalanced dataset?</p>
           <p>A GAN generates extra leaf images for the under-represented classes of a 38-class plant disease dataset. A custom CNN is then trained on the balanced set and checked with 5-fold cross-validation.</p>
-          <dl class="metrics"><div><dt>Accuracy</dt><dd>98.19%</dd></div><div><dt>Macro F1</dt><dd>0.982</dd></div><div><dt>Classes</dt><dd>38</dd></div></dl>
+          <dl class="metrics" style="--cols:3"><div><dt>Accuracy</dt><dd>98.19%</dd></div><div><dt>Macro F1</dt><dd>0.982</dd></div><div><dt>Classes</dt><dd>38</dd></div></dl>
           <ul class="tags"><li>GAN</li><li>CNN</li><li>Class imbalance</li><li>K-fold</li></ul>
           <div class="links"><a href="https://www.kaggle.com/datasets/muhammadazeemaif25/plant-disease-imbalanced-vs-gan-balanced">Dataset on Kaggle ↗</a></div>
           <div class="team">Team <a href="https://ai-collective-lab.github.io/portfolio-muhammad-azeem-bhatti/"><img src="https://github.com/Muhammad-Azeem-Bhatti.png?size=52" alt="" width="26" height="26" loading="lazy">@Muhammad-Azeem-Bhatti</a><a href="https://ai-collective-lab.github.io/portfolio-munahilamin03/"><img src="https://github.com/munahilamin03.png?size=52" alt="" width="26" height="26" loading="lazy">@munahilamin03</a><a href="https://ai-collective-lab.github.io/portfolio-zainulaabaidin/"><img src="https://github.com/zainulaabaidin.png?size=52" alt="" width="26" height="26" loading="lazy">@zainulaabaidin</a><a href="https://ai-collective-lab.github.io/portfolio-sumer238/"><img src="https://github.com/Sumer238.png?size=52" alt="" width="26" height="26" loading="lazy">@Sumer238</a></div>
@@ -154,11 +155,11 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
         <a class="src-btn" href="https://github.com/AI-Collective-Lab/HIGGS-ML-Classification" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.58v-2.03c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.94 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3"/></svg>Source</a>
         <div>
           <span class="mine">Team member</span>
-          <p class="kicker">Particle physics data · scikit-learn</p>
+          <p class="kicker">Particle physics data · scikit-learn · Nov 2025</p>
           <h3><a class="title" href="https://github.com/AI-Collective-Lab/HIGGS-ML-Classification" target="_blank" rel="noopener">HIGGS: logistic regression vs neural network <span aria-hidden="true">↗</span></a></h3>
           <p class="sub">How much does model capacity matter at 11 million samples?</p>
           <p>Both models were trained on 16 slices of the HIGGS collision dataset (11M events, 28 features), from 1% to 100%, to find where extra data stops paying off. The network&#x27;s accuracy is already 76.6% at 30% of the data and only reaches 76.8% at 100%.</p>
-          <dl class="metrics"><div><dt>ROC-AUC</dt><dd>0.852<small>LR 0.684</small></dd></div><div><dt>Accuracy</dt><dd>76.8%<small>LR 64.1%</small></dd></div><div><dt>Train time</dt><dd>3,204s<small>LR 87s</small></dd></div></dl>
+          <dl class="metrics" style="--cols:3"><div><dt>ROC-AUC</dt><dd>0.852<small>LR 0.684</small></dd></div><div><dt>Accuracy</dt><dd>76.8%<small>LR 64.1%</small></dd></div><div><dt>Train time</dt><dd>3,204s<small>LR 87s</small></dd></div></dl>
           <ul class="tags"><li>MLP</li><li>Logistic regression</li><li>Scaling study</li><li>ROC / PR</li></ul>
           <div class="links"><a href="https://github.com/AI-Collective-Lab/HIGGS-ML-Classification/blob/main/paper/REPORT.pdf">Report (PDF) ↗</a></div>
           <div class="team">Team <a href="https://ai-collective-lab.github.io/portfolio-muhammad-azeem-bhatti/"><img src="https://github.com/Muhammad-Azeem-Bhatti.png?size=52" alt="" width="26" height="26" loading="lazy">@Muhammad-Azeem-Bhatti</a><a href="https://ai-collective-lab.github.io/portfolio-munahilamin03/"><img src="https://github.com/munahilamin03.png?size=52" alt="" width="26" height="26" loading="lazy">@munahilamin03</a><a href="https://ai-collective-lab.github.io/portfolio-zainulaabaidin/"><img src="https://github.com/zainulaabaidin.png?size=52" alt="" width="26" height="26" loading="lazy">@zainulaabaidin</a></div>
