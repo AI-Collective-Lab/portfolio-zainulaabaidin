@@ -190,18 +190,20 @@ document.querySelectorAll('.card[data-href]').forEach(c=>c.addEventListener('cli
   if(ev.target.closest('a')||String(getSelection()).length) return;
   window.open(c.dataset.href,'_blank','noopener');
 }));
-// Internship slideshow: auto-advances every 2 s; pauses on hover/focus or a hidden tab; arrows, dots, swipe, keys.
+// Internship slideshow: auto-advances every 5 s; touch pauses it for 8 s; pauses on hover/focus or a hidden tab; arrows, dots, swipe, keys.
 document.querySelectorAll('.slider').forEach(sl=>{
   const track=sl.querySelector('.track'), slides=[...track.children], dots=[...sl.querySelectorAll('.dot')];
   const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
   let i=0, timer=null, paused=false;
   function go(n){ i=(n+slides.length)%slides.length; track.style.transform=`translateX(${-100*i}%)`;
     dots.forEach((d,k)=>d.setAttribute('aria-current',k===i)); slides.forEach((s,k)=>s.setAttribute('aria-hidden',k!==i)); }
-  function start(){ stop(); if(!still) timer=setInterval(()=>{ if(!paused && !document.hidden) go(i+1); },2000); }
+  function start(){ stop(); if(!still) timer=setInterval(()=>{ if(!paused && !document.hidden) go(i+1); },5000); }
   function stop(){ if(timer) clearInterval(timer); timer=null; }
   sl.querySelector('.prev').onclick=()=>{go(i-1); start();};
   sl.querySelector('.next').onclick=()=>{go(i+1); start();};
   dots.forEach((d,k)=>d.onclick=()=>{go(k); start();});
+  let resume; sl.addEventListener('touchstart',()=>{ paused=true; clearTimeout(resume); },{passive:true});
+  sl.addEventListener('touchend',()=>{ clearTimeout(resume); resume=setTimeout(()=>paused=false,8000); });
   sl.addEventListener('mouseenter',()=>paused=true); sl.addEventListener('mouseleave',()=>paused=false);
   sl.addEventListener('focusin',()=>paused=true); sl.addEventListener('focusout',()=>paused=false);
   sl.addEventListener('keydown',ev=>{ if(ev.key==='ArrowLeft'){go(i-1);start();} if(ev.key==='ArrowRight'){go(i+1);start();} });
