@@ -42,6 +42,12 @@ h1{font:800 clamp(34px,6vw,60px)/1 var(--display);font-stretch:118%;letter-spaci
 .connect a{display:inline-flex;align-items:center;gap:8px;font:500 13px/1.35 var(--mono);padding:8px 13px;border-radius:18px;border:1px solid var(--line);background:var(--surface);text-decoration:none;overflow-wrap:anywhere}
 .connect a:hover{border-color:var(--blue)}
 .connect svg{width:16px;height:16px;flex:none}
+.card{position:relative}
+.src-btn{position:absolute;top:18px;right:18px;z-index:1;display:inline-flex;align-items:center;gap:7px;font:500 13px/1 var(--mono);padding:9px 13px;border-radius:99px;background:var(--ink);color:var(--paper);text-decoration:none;border:1px solid var(--ink)}
+.src-btn svg{width:15px;height:15px}
+.src-btn:hover{opacity:.88}
+.frame.shot{margin-top:46px}
+@media (max-width:820px){.frame.shot{margin-top:0}}
 .card.clickable{cursor:pointer;transition:border-color .2s ease,transform .2s ease}
 .card.clickable:hover{border-color:var(--blue);transform:translateY(-2px)}
 h3 a.title{text-decoration:none} h3 a.title span{color:var(--blue);font-size:.8em} .card.clickable:hover h3 a.title{color:var(--blue)}
@@ -125,6 +131,7 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
       <p class="eyebrow">Projects</p>
       <div class="cards">
       <article class="card split clickable" data-href="https://github.com/AI-Collective-Lab/Effectiveness-Of-Balancing-Dataset-On-Classification">
+        <a class="src-btn" href="https://github.com/AI-Collective-Lab/Effectiveness-Of-Balancing-Dataset-On-Classification" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.58v-2.03c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.94 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3"/></svg>Source</a>
         <div>
           <span class="mine">Co-author</span>
           <p class="kicker">Computer vision · PyTorch</p>
@@ -133,12 +140,13 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
           <p>A GAN generates extra leaf images for the under-represented classes of a 38-class plant disease dataset. A custom CNN is then trained on the balanced set and checked with 5-fold cross-validation.</p>
           <dl class="metrics"><div><dt>Accuracy</dt><dd>98.19%</dd></div><div><dt>Macro F1</dt><dd>0.982</dd></div><div><dt>Classes</dt><dd>38</dd></div></dl>
           <ul class="tags"><li>GAN</li><li>CNN</li><li>Class imbalance</li><li>K-fold</li></ul>
-          <div class="links"><a href="https://github.com/AI-Collective-Lab/Effectiveness-Of-Balancing-Dataset-On-Classification">Source ↗</a><a href="https://www.kaggle.com/datasets/muhammadazeemaif25/plant-disease-imbalanced-vs-gan-balanced">Dataset on Kaggle ↗</a></div>
+          <div class="links"><a href="https://www.kaggle.com/datasets/muhammadazeemaif25/plant-disease-imbalanced-vs-gan-balanced">Dataset on Kaggle ↗</a></div>
           <div class="team">Team <a href="https://ai-collective-lab.github.io/portfolio-muhammad-azeem-bhatti/"><img src="https://github.com/Muhammad-Azeem-Bhatti.png?size=52" alt="" width="26" height="26" loading="lazy">@Muhammad-Azeem-Bhatti</a><a href="https://ai-collective-lab.github.io/portfolio-munahilamin03/"><img src="https://github.com/munahilamin03.png?size=52" alt="" width="26" height="26" loading="lazy">@munahilamin03</a><a href="https://ai-collective-lab.github.io/portfolio-zainulaabaidin/"><img src="https://github.com/zainulaabaidin.png?size=52" alt="" width="26" height="26" loading="lazy">@zainulaabaidin</a><a href="https://ai-collective-lab.github.io/portfolio-sumer238/"><img src="https://github.com/Sumer238.png?size=52" alt="" width="26" height="26" loading="lazy">@Sumer238</a></div>
         </div>
-        <div class="frame"><img src="https://ai-collective-lab.github.io/assets/balancing-learning-curves.webp" alt="Training and validation curves for the GAN-balanced classifier." loading="lazy"></div>
+        <div class="frame shot"><img src="https://ai-collective-lab.github.io/assets/balancing-learning-curves.webp" alt="Training and validation curves for the GAN-balanced classifier." loading="lazy"></div>
       </article>
       <article class="card split clickable" data-href="https://github.com/AI-Collective-Lab/HIGGS-ML-Classification">
+        <a class="src-btn" href="https://github.com/AI-Collective-Lab/HIGGS-ML-Classification" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.58v-2.03c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.94 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3"/></svg>Source</a>
         <div>
           <span class="mine">Team member</span>
           <p class="kicker">Particle physics data · scikit-learn</p>
@@ -147,10 +155,10 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
           <p>Both models were trained on 16 slices of the HIGGS collision dataset (11M events, 28 features), from 1% to 100%, to find where extra data stops paying off. The network&#x27;s accuracy is already 76.6% at 30% of the data and only reaches 76.8% at 100%.</p>
           <dl class="metrics"><div><dt>ROC-AUC</dt><dd>0.852<small>LR 0.684</small></dd></div><div><dt>Accuracy</dt><dd>76.8%<small>LR 64.1%</small></dd></div><div><dt>Train time</dt><dd>3,204s<small>LR 87s</small></dd></div></dl>
           <ul class="tags"><li>MLP</li><li>Logistic regression</li><li>Scaling study</li><li>ROC / PR</li></ul>
-          <div class="links"><a href="https://github.com/AI-Collective-Lab/HIGGS-ML-Classification">Source ↗</a><a href="https://github.com/AI-Collective-Lab/HIGGS-ML-Classification/blob/main/paper/REPORT.pdf">Report (PDF) ↗</a></div>
+          <div class="links"><a href="https://github.com/AI-Collective-Lab/HIGGS-ML-Classification/blob/main/paper/REPORT.pdf">Report (PDF) ↗</a></div>
           <div class="team">Team <a href="https://ai-collective-lab.github.io/portfolio-muhammad-azeem-bhatti/"><img src="https://github.com/Muhammad-Azeem-Bhatti.png?size=52" alt="" width="26" height="26" loading="lazy">@Muhammad-Azeem-Bhatti</a><a href="https://ai-collective-lab.github.io/portfolio-munahilamin03/"><img src="https://github.com/munahilamin03.png?size=52" alt="" width="26" height="26" loading="lazy">@munahilamin03</a><a href="https://ai-collective-lab.github.io/portfolio-zainulaabaidin/"><img src="https://github.com/zainulaabaidin.png?size=52" alt="" width="26" height="26" loading="lazy">@zainulaabaidin</a></div>
         </div>
-        <div class="frame"><img src="https://ai-collective-lab.github.io/assets/higgs-roc.webp" alt="ROC curves: the neural network sits well above logistic regression." loading="lazy"></div>
+        <div class="frame shot"><img src="https://ai-collective-lab.github.io/assets/higgs-roc.webp" alt="ROC curves: the neural network sits well above logistic regression." loading="lazy"></div>
       </article>
       </div>
     </div>
