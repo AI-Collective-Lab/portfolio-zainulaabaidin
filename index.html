@@ -42,6 +42,12 @@ h1{font:800 clamp(34px,6vw,60px)/1 var(--display);font-stretch:118%;letter-spaci
 .connect a{display:inline-flex;align-items:center;gap:8px;font:500 13px/1.35 var(--mono);padding:8px 13px;border-radius:18px;border:1px solid var(--line);background:var(--surface);text-decoration:none;overflow-wrap:anywhere}
 .connect a:hover{border-color:var(--blue)}
 .connect svg{width:16px;height:16px;flex:none}
+.card.clickable{cursor:pointer;transition:border-color .2s ease,transform .2s ease}
+.card.clickable:hover{border-color:var(--blue);transform:translateY(-2px)}
+h3 a.title{text-decoration:none} h3 a.title span{color:var(--blue);font-size:.8em} .card.clickable:hover h3 a.title{color:var(--blue)}
+.connect a.cv{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.connect a.cv:hover{opacity:.88}
+
 .stats{font:400 13px/1.5 var(--mono);color:var(--muted);margin:0}
 .stats a{color:var(--ink)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
@@ -84,6 +90,19 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
 .grid3 .card{display:flex;flex-direction:column} .grid3 .tags{margin-top:auto}
 .org-logo{display:inline-flex;background:#fff;padding:10px 16px;border-radius:12px;border:1px solid var(--line);margin:0 0 18px}
 .org-logo img{height:40px;width:auto}
+@media print{
+ :root{--paper:#fff;--surface:#fff;--ink:#0a1430;--muted:#46516e;--line:#d5dbe8;--blue:#1f6fe0;--violet:#6d43d4}
+ @page{margin:14mm}
+ body{font-size:13px;background:#fff}
+ #nn,.connect a.cv,.frame,.team{display:none}
+ .card.split,.cards,.grid3{display:block} .eyebrow,h2,.intro,.org-logo{break-after:avoid;page-break-after:avoid} #research,#industry{break-before:page} .card{margin:0 0 12px} .card.clickable:hover{transform:none}
+ section{background:none;padding:22px 0;border-top:1px solid var(--line)}
+ .hero{padding:0 0 18px}
+ .card{break-inside:avoid;padding:16px;border-radius:10px}
+ h1{font-size:34px} h2{font-size:24px} h3{font-size:17px}
+ .connect a{padding:5px 9px}
+ a{text-decoration:none}
+}
 </style>
 </head>
 <body>
@@ -95,7 +114,7 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
       <div class="who">
         <h1>Zain Ul Aabaidin</h1>
         <p class="about">Works on the collective&#x27;s computer-vision and classification projects.</p>
-        <nav class="connect" aria-label="Contact links"><a href="https://github.com/zainulaabaidin" target=_blank rel=noopener><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.58v-2.03c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.94 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3"/></svg>GitHub</a></nav>
+        <nav class="connect" aria-label="Contact links"><a class="cv" href="portfolio.pdf" download="Zain-Ul-Aabaidin-CV.pdf"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>Download CV</a><a href="https://github.com/zainulaabaidin" target=_blank rel=noopener><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.58v-2.03c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.31-5.47-1.34-5.47-5.94 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .3"/></svg>GitHub</a></nav>
         <p class="stats">2 projects · part of <a href="https://ai-collective-lab.github.io/">AI Collective</a></p>
       </div>
     </div>
@@ -105,11 +124,11 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
     <div class="wrap">
       <p class="eyebrow">Projects</p>
       <div class="cards">
-      <article class="card split">
+      <article class="card split clickable" data-href="https://github.com/AI-Collective-Lab/Effectiveness-Of-Balancing-Dataset-On-Classification">
         <div>
           <span class="mine">Co-author</span>
           <p class="kicker">Computer vision · PyTorch</p>
-          <h3>GAN-balanced plant disease classification</h3>
+          <h3><a class="title" href="https://github.com/AI-Collective-Lab/Effectiveness-Of-Balancing-Dataset-On-Classification" target="_blank" rel="noopener">GAN-balanced plant disease classification <span aria-hidden="true">↗</span></a></h3>
           <p class="sub">Does generating minority-class images fix an imbalanced dataset?</p>
           <p>A GAN generates extra leaf images for the under-represented classes of a 38-class plant disease dataset. A custom CNN is then trained on the balanced set and checked with 5-fold cross-validation.</p>
           <dl class="metrics"><div><dt>Accuracy</dt><dd>98.19%</dd></div><div><dt>Macro F1</dt><dd>0.982</dd></div><div><dt>Classes</dt><dd>38</dd></div></dl>
@@ -119,11 +138,11 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
         </div>
         <div class="frame"><img src="https://ai-collective-lab.github.io/assets/balancing-learning-curves.webp" alt="Training and validation curves for the GAN-balanced classifier." loading="lazy"></div>
       </article>
-      <article class="card split">
+      <article class="card split clickable" data-href="https://github.com/AI-Collective-Lab/HIGGS-ML-Classification">
         <div>
           <span class="mine">Team member</span>
           <p class="kicker">Particle physics data · scikit-learn</p>
-          <h3>HIGGS: logistic regression vs neural network</h3>
+          <h3><a class="title" href="https://github.com/AI-Collective-Lab/HIGGS-ML-Classification" target="_blank" rel="noopener">HIGGS: logistic regression vs neural network <span aria-hidden="true">↗</span></a></h3>
           <p class="sub">How much does model capacity matter at 11 million samples?</p>
           <p>Both models were trained on 16 slices of the HIGGS collision dataset (11M events, 28 features), from 1% to 100%, to find where extra data stops paying off. The network&#x27;s accuracy is already 76.6% at 30% of the data and only reaches 76.8% at 100%.</p>
           <dl class="metrics"><div><dt>ROC-AUC</dt><dd>0.852<small>LR 0.684</small></dd></div><div><dt>Accuracy</dt><dd>76.8%<small>LR 64.1%</small></dd></div><div><dt>Train time</dt><dd>3,204s<small>LR 87s</small></dd></div></dl>
@@ -138,6 +157,11 @@ h3{font:700 clamp(20px,2.6vw,26px)/1.25 var(--display);margin:0 0 8px}
   </section>
 </main>
 <script>
+// Project cards open their repository (clicks on links inside the card keep their own target).
+document.querySelectorAll('.card[data-href]').forEach(c=>c.addEventListener('click',ev=>{
+  if(ev.target.closest('a')||String(getSelection()).length) return;
+  window.open(c.dataset.href,'_blank','noopener');
+}));
 // Background: a layered neural network; signals travel layer by layer, left to right.
 (function(){
   const cv=document.getElementById('nn'), ctx=cv.getContext('2d');
