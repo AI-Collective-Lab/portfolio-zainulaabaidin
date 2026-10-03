@@ -1,10 +1,17 @@
 <p align="center"><img src="https://github.com/zainulaabaidin.png?size=240" width="120" height="120" alt=""></p>
 <h1 align="center">Zain Ul Aabaidin</h1>
-<p align="center">Works on the collective&#x27;s computer-vision and classification projects.</p>
+<p align="center">Cloud engineer working across Azure, AWS and Huawei Cloud, now studying for an MS in Artificial Intelligence. Works on the collective&#x27;s computer-vision and classification projects.</p>
 
 <p align="center"><a href="https://ai-collective-lab.github.io/portfolio-zainulaabaidin/"><img src="https://img.shields.io/badge/Portfolio-view_page-1f6fe0?style=for-the-badge" alt="View portfolio page"></a> <a href="https://github.com/zainulaabaidin"><img src="https://img.shields.io/badge/GitHub-@zainulaabaidin-0a1430?style=for-the-badge&logo=github" alt="GitHub profile"></a> <a href="https://ai-collective-lab.github.io/"><img src="https://img.shields.io/badge/AI_Collective-main_site-6d43d4?style=for-the-badge" alt="AI Collective"></a></p>
 
 **Connect:** [GitHub](https://github.com/zainulaabaidin) · [LinkedIn](https://www.linkedin.com/in/zainulaabaidin) · [zainulaabaidin@gmail.com](mailto:zainulaabaidin@gmail.com) · [+92 348 4349905](tel:+923484349905)
+
+## 🎓 Education
+
+| Degree | Institution | Dates |
+|---|---|---|
+| **MS, Artificial Intelligence** | Air University, E-9 Campus, Islamabad | Sep 2025 – Present |
+| **BS, Computer Science** | Virtual University of Pakistan, Islamabad | 2024 |
 
 ## 🧠 Projects
 
